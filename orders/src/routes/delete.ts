@@ -1,5 +1,5 @@
 import {
-    NotAuthorizedError, NotFoundError, requireAuth
+  NotAuthorizedError, NotFoundError, requireAuth
 } from '@nishit.patel/common';
 import express, { Request, Response } from 'express';
 import { OrderCancelledPublisher } from '../events/publishers/order-cancelled-publisher';

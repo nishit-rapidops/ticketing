@@ -1,8 +1,8 @@
+import { requireAuth, validateRequest } from '@nishit.patel/common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { requireAuth, validateRequest } from '@nishit.patel/common';
-import { Ticket } from '../models/ticket';
 import { TicketCreatedPublisher } from '../events/publishers/ticket-created-publisher';
+import { Ticket } from '../models/ticket';
 import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();

@@ -1,14 +1,11 @@
+import {
+  BadRequestError, NotAuthorizedError, NotFoundError,
+  requireAuth, validateRequest
+} from '@nishit.patel/common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import {
-  validateRequest,
-  NotFoundError,
-  requireAuth,
-  NotAuthorizedError,
-  BadRequestError,
-} from '@nishit.patel/common';
-import { Ticket } from '../models/ticket';
 import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
+import { Ticket } from '../models/ticket';
 import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
