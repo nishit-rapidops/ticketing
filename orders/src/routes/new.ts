@@ -1,16 +1,14 @@
-import mongoose from 'mongoose';
-import express, { Request, Response } from 'express';
 import {
-  requireAuth,
-  validateRequest,
-  NotFoundError,
-  OrderStatus,
-  BadRequestError,
+    BadRequestError, NotFoundError,
+    OrderStatus, requireAuth,
+    validateRequest
 } from '@nishit.patel/common';
+import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { Ticket } from '../models/ticket';
-import { Order } from '../models/order';
+import mongoose from 'mongoose';
 import { OrderCreatedPublisher } from '../events/publishers/order-created-publisher';
+import { Order } from '../models/order';
+import { Ticket } from '../models/ticket';
 import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
