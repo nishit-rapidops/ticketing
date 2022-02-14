@@ -10,6 +10,7 @@ import { newOrderRouter } from './routes/new';
 import { showOrderRouter } from './routes/show';
 
 const app = express();
+
 app.set('trust proxy', true);
 app.use(json());
 app.use(
@@ -30,5 +31,4 @@ app.all('*', async (req, res) => {
 });
 
 app.use(errorHandler);
-
 export { app };
